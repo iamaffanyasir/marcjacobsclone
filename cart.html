@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARC JACOBS - Shopping Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="cart.js" defer></script>
+</head>
+<body>
+    <div class="product-page">
+        <header>
+            <div class="header-content">
+                <h1>MARC JACOBS</h1>
+                <hr class="header-line">
+            </div>
+            <div class="header-icons">
+                <i class="fas fa-user"></i>
+                <i class="fas fa-search"></i>
+                <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </header>
+
+        <div class="cart-container">
+            <h2>MY SHOPPING BAG</h2>
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+        </div>
+
+        <button class="floating-menu-btn">MENU ≡</button>
+    </div>
+
+    <!-- Add the menu overlay -->
+    <div class="menu-overlay">
+        <div class="menu-header">
+            <button class="close-menu">×</button>
+            <div class="menu-icons">
+                <a href="main.html"><i class="fas fa-home"></i></a>
+                <a href="wishlist.html"><i class="far fa-heart"></i></a>
+                <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </div>
+        <nav class="menu-content">
+            <nav class="menu-content">
+                <ul>
+                    <li class="category-header"><a href="#">BAGS</a></li>
+                    <li><a href="tote-bag.html">THE TOTE BAG</a></li>
+                    <li><a href="snapshot.html">THE SNAPSHOT</a></li>
+                    <li><a href="sack-bag.html">THE SACK BAG</a></li>
+                    <li><a href="mini-bag.html">THE MINI BAG</a></li>
+                    <li><a href="#">CROSSBODY BAGS</a></li>
+                    <li><a href="#">SHOULDER BAGS</a></li>
+                    <li><a href="#">BUCKET BAGS</a></li>
+                    <li><a href="#">TOP HANDLE BAGS</a></li>
+                    <li><a href="#">BACKPACKS</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    
+                    <li class="category-header"><a href="#">WALLETS</a></li>
+                    <li><a href="#">LARGE WALLETS</a></li>
+                    <li><a href="#">SMALL WALLETS</a></li>
+                    <li><a href="#">WRISTLETS</a></li>
+                    <li><a href="#">CARD CASES</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    
+                    <li class="category-header"><a href="#">ACCESSORIES</a></li>
+                    <li><a href="#">BEAUTY BAGS</a></li>
+                    <li><a href="#">STRAPS</a></li>
+                    <li><a href="#">CHARMS</a></li>
+                    <li><a href="#">SUNGLASSES</a></li>
+                    <li><a href="#">HATS AND SCARVES</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    
+                    <li class="category-header"><a href="#">READY TO WEAR</a></li>
+                    <li><a href="#">DRESSES</a></li>
+                    <li><a href="#">TOPS</a></li>
+                    <li><a href="#">BOTTOMS</a></li>
+                    <li><a href="#">OUTERWEAR</a></li>
+                    <li><a href="#">THE KIDS COLLECTION</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+            
+                    <li class="category-header"><a href="#">JEWELRY</a></li>
+                    <li><a href="#">NECKLACES</a></li>
+                    <li><a href="#">BRACELETS</a></li>
+                    <li><a href="#">EARRINGS</a></li>
+                    <li><a href="#">RINGS</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+            
+                    <li class="category-header"><a href="#">SHOES</a></li>
+                    <li><a href="#">SNEAKERS</a></li>
+                    <li><a href="#">BOOTS</a></li>
+                    <li><a href="#">FLATS</a></li>
+                    <li><a href="#">HEELS</a></li>
+                    <li><a href="#">SANDALS</a></li>
+            
+                    <li class="category-header"><a href="#">FRAGRANCE</a></li>
+                    <li><a href="#">PERFECT</a></li>
+                    <li><a href="#">DAISY</a></li>
+                    <li><a href="#">GIFT SETS</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+            
+                    <li class="category-header"><a href="#">HEAVEN</a></li>
+                    <li><a href="#">MARCDOWN</a></li>
+                    <li><a href="#">40 YEARS OF MARC JACOBS</a></li>
+                    <li><a href="#">FEATURED</a></li>
+                </ul>
+            </nav>
+        </nav>
+    </div>
+
+    <script>
+        // Menu functionality
+        const menuBtn = document.querySelector('.floating-menu-btn');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const closeMenuBtn = document.querySelector('.close-menu');
+
+        menuBtn.addEventListener('click', () => {
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Display cart items
+        function displayCartItems() {
+            const cartContainer = document.querySelector('.cart-items');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <p>Your shopping bag is empty</p>
+                        <button onclick="window.location.href='main.html'" class="continue-shopping">
+                            Continue Shopping
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            let totalAmount = 0;
+            const cartHTML = cart.map((item, index) => {
+                const price = parseFloat(item.price.replace('$', ''));
+                totalAmount += price;
+                return `
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="item-details">
+                            <h3>${item.name}</h3>
+                            <p class="item-color">Color: ${item.color}</p>
+                            <p class="item-price">${item.price}</p>
+                            <div class="item-actions">
+                                <button class="remove-btn" onclick="removeFromCart(${index})">
+                                    <i class="fas fa-trash"></i> Remove
+                                </button>
+                                <button class="move-to-wishlist-btn" onclick="moveToWishlist(${index})">
+                                    <i class="far fa-heart"></i> Move to Wishlist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            cartContainer.innerHTML = `
+                <div class="cart-items-list">
+                    ${cartHTML}
+                </div>
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span>$${totalAmount.toFixed(2)}</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span>FREE</span>
+                    </div>
+                    <hr>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span>$${totalAmount.toFixed(2)}</span>
+                    </div>
+                    <button class="checkout-btn">Proceed to Checkout</button>
+                </div>
+            `;
+        }
+
+        // Remove from cart
+        function removeFromCart(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCartItems();
+            shoppingCart.updateCartCount();
+
+            const toast = document.createElement('div');
+            toast.classList.add('toast-message');
+            toast.textContent = 'Removed from cart!';
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 2000);
+        }
+
+        // Move to wishlist
+        function moveToWishlist(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const item = cart[index];
+            const added = shoppingCart.addToWishlist(item);
+            
+            if (added) {
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                displayCartItems();
+                shoppingCart.updateCartCount();
+
+                const toast = document.createElement('div');
+                toast.classList.add('toast-message');
+                toast.textContent = 'Moved to wishlist!';
+                document.body.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.remove();
+                }, 2000);
+            }
+        }
+
+        // Initialize cart display
+        displayCartItems();
+    </script>
+
+    <style>
+        .cart-container {
+            padding: 20px;
+            margin-top: 60px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cart-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .cart-items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cart-items-list {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: white;
+            border: 1px solid #eee;
+        }
+
+        .item-image {
+            width: 150px;
+            height: 150px;
+        }
+
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .item-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .item-details h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .item-color {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .item-price {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .item-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .remove-btn, .move-to-wishlist-btn {
+            padding: 8px 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            border: 1px solid #ddd;
+        }
+
+        .cart-summary {
+            background: white;
+            padding: 20px;
+            border: 1px solid #eee;
+            margin-top: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .summary-row.total {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 15px;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 16px;
+            background: black;
+            color: white;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .continue-shopping {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: black;
+            color: white;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+        }
+
+        @media screen and (min-width: 768px) {
+            .cart-items {
+                flex-direction: row;
+            }
+
+            .cart-summary {
+                flex: 1;
+                position: sticky;
+                top: 20px;
+                align-self: flex-start;
+                margin-top: 0;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .cart-item {
+                flex-direction: column;
+            }
+
+            .item-image {
+                width: 100%;
+                height: 200px;
+            }
+
+            .item-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html> 

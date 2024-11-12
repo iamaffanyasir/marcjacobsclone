@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARC JACOBS - Wishlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="cart.js" defer></script>
+</head>
+<body>
+    <div class="product-page">
+        <header>
+            <div class="header-content">
+                <h1>MARC JACOBS</h1>
+                <hr class="header-line">
+            </div>
+            <div class="header-icons">
+                <i class="fas fa-user"></i>
+                <i class="fas fa-search"></i>
+                <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </header>
+
+        <div class="wishlist-container">
+            <h2>MY WISHLIST</h2>
+            <div class="wishlist-items">
+                <!-- Wishlist items will be dynamically added here -->
+            </div>
+        </div>
+
+        <button class="floating-menu-btn">MENU ≡</button>
+    </div>
+
+    <!-- Add the menu overlay -->
+    <div class="menu-overlay">
+        <div class="menu-header">
+            <button class="close-menu">×</button>
+            <div class="menu-icons">
+                <a href="main.html"><i class="fas fa-home"></i></a>
+                <a href="wishlist.html"><i class="far fa-heart"></i></a>
+                <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </div>
+        <nav class="menu-content">
+            <nav class="menu-content">
+                <ul>
+                    <li class="category-header"><a href="#">BAGS</a></li>
+                    <li><a href="tote-bag.html">THE TOTE BAG</a></li>
+                    <li><a href="snapshot.html">THE SNAPSHOT</a></li>
+                    <li><a href="sack-bag.html">THE SACK BAG</a></li>
+                    <li><a href="mini-bag.html">THE MINI BAG</a></li>
+                    <li><a href="#">CROSSBODY BAGS</a></li>
+                    <li><a href="#">SHOULDER BAGS</a></li>
+                    <li><a href="#">BUCKET BAGS</a></li>
+                    <li><a href="#">TOP HANDLE BAGS</a></li>
+                    <li><a href="#">BACKPACKS</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    
+                    <li class="category-header"><a href="#">WALLETS</a></li>
+                    <li><a href="#">LARGE WALLETS</a></li>
+                    <li><a href="#">SMALL WALLETS</a></li>
+                    <li><a href="#">WRISTLETS</a></li>
+                    <li><a href="#">CARD CASES</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    
+                    <li class="category-header"><a href="#">ACCESSORIES</a></li>
+                    <li><a href="#">BEAUTY BAGS</a></li>
+                    <li><a href="#">STRAPS</a></li>
+                    <li><a href="#">CHARMS</a></li>
+                    <li><a href="#">SUNGLASSES</a></li>
+                    <li><a href="#">HATS AND SCARVES</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    
+                    <li class="category-header"><a href="#">READY TO WEAR</a></li>
+                    <li><a href="#">DRESSES</a></li>
+                    <li><a href="#">TOPS</a></li>
+                    <li><a href="#">BOTTOMS</a></li>
+                    <li><a href="#">OUTERWEAR</a></li>
+                    <li><a href="#">THE KIDS COLLECTION</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+            
+                    <li class="category-header"><a href="#">JEWELRY</a></li>
+                    <li><a href="#">NECKLACES</a></li>
+                    <li><a href="#">BRACELETS</a></li>
+                    <li><a href="#">EARRINGS</a></li>
+                    <li><a href="#">RINGS</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+            
+                    <li class="category-header"><a href="#">SHOES</a></li>
+                    <li><a href="#">SNEAKERS</a></li>
+                    <li><a href="#">BOOTS</a></li>
+                    <li><a href="#">FLATS</a></li>
+                    <li><a href="#">HEELS</a></li>
+                    <li><a href="#">SANDALS</a></li>
+            
+                    <li class="category-header"><a href="#">FRAGRANCE</a></li>
+                    <li><a href="#">PERFECT</a></li>
+                    <li><a href="#">DAISY</a></li>
+                    <li><a href="#">GIFT SETS</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+            
+                    <li class="category-header"><a href="#">HEAVEN</a></li>
+                    <li><a href="#">MARCDOWN</a></li>
+                    <li><a href="#">40 YEARS OF MARC JACOBS</a></li>
+                    <li><a href="#">FEATURED</a></li>
+                </ul>
+            </nav>
+        </nav>
+    </div>
+
+    <script>
+        // Menu functionality
+        const menuBtn = document.querySelector('.floating-menu-btn');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const closeMenuBtn = document.querySelector('.close-menu');
+
+        menuBtn.addEventListener('click', () => {
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Display wishlist items
+        function displayWishlistItems() {
+            const wishlistContainer = document.querySelector('.wishlist-items');
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            if (wishlist.length === 0) {
+                wishlistContainer.innerHTML = `
+                    <div class="empty-wishlist">
+                        <p>Your wishlist is empty</p>
+                        <button onclick="window.location.href='main.html'" class="continue-shopping">
+                            Continue Shopping
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            wishlistContainer.innerHTML = wishlist.map((item, index) => `
+                <div class="wishlist-item">
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="item-details">
+                        <h3>${item.name}</h3>
+                        <p class="item-color">Color: ${item.color}</p>
+                        <p class="item-price">${item.price}</p>
+                        <div class="item-actions">
+                            <button class="add-to-cart-btn" onclick="addToCartFromWishlist(${index})">
+                                Add to Bag
+                            </button>
+                            <button class="remove-btn" onclick="removeFromWishlist(${index})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Add to cart from wishlist
+        function addToCartFromWishlist(index) {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const item = wishlist[index];
+            shoppingCart.addToCart(item);
+            
+            const toast = document.createElement('div');
+            toast.classList.add('toast-message');
+            toast.textContent = 'Added to bag successfully!';
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 2000);
+        }
+
+        // Remove from wishlist
+        function removeFromWishlist(index) {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            wishlist.splice(index, 1);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            displayWishlistItems();
+            shoppingCart.updateWishlistCount();
+
+            const toast = document.createElement('div');
+            toast.classList.add('toast-message');
+            toast.textContent = 'Removed from wishlist!';
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 2000);
+        }
+
+        // Initialize wishlist display
+        displayWishlistItems();
+    </script>
+
+    <style>
+        .wishlist-container {
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        .wishlist-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .wishlist-items {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .wishlist-item {
+            border: 1px solid #eee;
+            padding: 15px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .wishlist-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-details h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .item-color {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .item-price {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .item-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .add-to-cart-btn {
+            flex: 1;
+            padding: 8px;
+            background: black;
+            color: white;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .remove-btn {
+            padding: 8px;
+            background: transparent;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .empty-wishlist {
+            text-align: center;
+            padding: 40px;
+            grid-column: 1 / -1;
+        }
+
+        .continue-shopping {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: black;
+            color: white;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .wishlist-items {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html> 

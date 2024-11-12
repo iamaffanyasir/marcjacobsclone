@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARC JACOBS - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .skip-corner {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            background: transparent;
+            border: none;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            cursor: pointer;
+            z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .skip-corner:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-page">
+        <button class="skip-corner" onclick="window.location.href='main.html'">Skip</button>
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="./Assets/login.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="auth-content">
+            <div class="language-selector">
+                <span>India | Edit</span>
+            </div>
+            <h1>MARC JACOBS</h1>
+            <div class="auth-container">
+                <div class="button-container">
+                    <button class="sign-in-btn" onclick="window.location.href='main.html'">Sign in</button>
+                    <button class="sign-in-btn opacity-50" onclick="window.location.href='signup.html'">Create account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

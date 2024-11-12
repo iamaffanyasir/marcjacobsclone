@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARC JACOBS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="splash-screen">
+        <div class="content">
+            <h1>MARC JACOBS</h1>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const progress = document.querySelector('.loading-progress');
+        
+        // Animate the loading bar
+        progress.style.width = '0%';
+        setTimeout(() => {
+            progress.style.width = '100%';
+        }, 100);
+
+        // Redirect after 2 seconds
+        setTimeout(function() {
+            window.location.href = 'login.html';
+        }, 2000);
+    </script>
+</body>
+</html> 

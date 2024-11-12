@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARC JACOBS - The Leather Mini Bag</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="cart.js" defer></script>
+</head>
+<body>
+    <div class="product-page">
+        <header>
+            <div class="header-content">
+                <h1>MARC JACOBS</h1>
+                <hr class="header-line">
+            </div>
+            <div class="header-icons">
+                <i class="fas fa-user"></i>
+                <i class="fas fa-search"></i>
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+        </header>
+
+        <div class="product-main">
+            <div class="product-images">
+                <div class="main-image-container">
+                    <img src="./Assets/mini1.webp" alt="Mini Bag Brown" class="main-product-image">
+                </div>
+            </div>
+
+            <div class="product-info-container">
+                <div class="product-header">
+                    <h2>THE LEATHER MINI BAG</h2>
+                    <p class="product-price">$395.00</p>
+                </div>
+
+                <div class="product-colors">
+                    <p class="color-label">COLOR: <span class="selected-color">Brown</span></p>
+                    <div class="color-options">
+                        <button class="color-btn brown selected" data-color="Brown"></button>
+                        <button class="color-btn black" data-color="Black"></button>
+                        <button class="color-btn tan" data-color="Tan"></button>
+                        <button class="color-btn white" data-color="White"></button>
+                    </div>
+                </div>
+
+                <div class="product-actions">
+                    <button class="add-to-cart">ADD TO BAG</button>
+                    <button class="wishlist-btn">
+                        <i class="far fa-heart"></i>
+                        ADD TO WISHLIST
+                    </button>
+                </div>
+
+                <div class="product-description">
+                    <div class="description-header">
+                        <h3>DETAILS</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="description-content">
+                        <ul>
+                            <li>100% Cow leather</li>
+                            <li>Magnetic snap closure</li>
+                            <li>Interior slip pocket</li>
+                            <li>Adjustable shoulder strap</li>
+                            <li>Height: 6" (15 cm)</li>
+                            <li>Width: 8" (20 cm)</li>
+                            <li>Depth: 3" (7.5 cm)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-description">
+                    <div class="description-header">
+                        <h3>SHIPPING & RETURNS</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="floating-menu-btn">MENU ≡</button>
+    </div>
+
+    <!-- Add the menu overlay -->
+    <div class="menu-overlay">
+        <div class="menu-header">
+            <button class="close-menu">×</button>
+            <div class="menu-icons">
+                <a href="main.html"><i class="fas fa-home"></i></a>
+                <a href="wishlist.html"><i class="far fa-heart"></i></a>
+                <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </div>
+        <nav class="menu-content">
+            <ul>
+                <li class="category-header"><a href="#">BAGS</a></li>
+                <li><a href="#">THE TOTE BAG</a></li>
+                <li><a href="#">THE SNAPSHOT</a></li>
+                <li><a href="#">THE SACK BAG</a></li>
+                <li><a href="#">THE DUAL BAG</a></li>
+                <li><a href="#">CROSSBODY BAGS</a></li>
+                <li><a href="#">MINI BAGS</a></li>
+                <li><a href="#">SHOULDER BAGS</a></li>
+                <li><a href="#">BUCKET BAGS</a></li>
+                <li><a href="#">TOP HANDLE BAGS</a></li>
+                <li><a href="#">BACKPACKS</a></li>
+                <li><a href="#">VIEW ALL</a></li>
+                
+                <li class="category-header"><a href="#">WALLETS</a></li>
+                <li><a href="#">LARGE WALLETS</a></li>
+                <li><a href="#">SMALL WALLETS</a></li>
+                <li><a href="#">WRISTLETS</a></li>
+                <li><a href="#">CARD CASES</a></li>
+                <li><a href="#">VIEW ALL</a></li>
+                
+                <li class="category-header"><a href="#">ACCESSORIES</a></li>
+                <li><a href="#">BEAUTY BAGS</a></li>
+                <li><a href="#">STRAPS</a></li>
+                <li><a href="#">CHARMS</a></li>
+                <li><a href="#">SUNGLASSES</a></li>
+                <li><a href="#">HATS AND SCARVES</a></li>
+                <li><a href="#">VIEW ALL</a></li>
+                
+                <li class="category-header"><a href="#">READY TO WEAR</a></li>
+                <li><a href="#">DRESSES</a></li>
+                <li><a href="#">TOPS</a></li>
+                <li><a href="#">BOTTOMS</a></li>
+                <li><a href="#">OUTERWEAR</a></li>
+                <li><a href="#">THE KIDS COLLECTION</a></li>
+                <li><a href="#">VIEW ALL</a></li>
+
+                <li class="category-header"><a href="#">JEWELRY</a></li>
+                <li><a href="#">NECKLACES</a></li>
+                <li><a href="#">BRACELETS</a></li>
+                <li><a href="#">EARRINGS</a></li>
+                <li><a href="#">RINGS</a></li>
+                <li><a href="#">VIEW ALL</a></li>
+
+                <li class="category-header"><a href="#">SHOES</a></li>
+                <li><a href="#">SNEAKERS</a></li>
+                <li><a href="#">BOOTS</a></li>
+                <li><a href="#">FLATS</a></li>
+                <li><a href="#">HEELS</a></li>
+                <li><a href="#">SANDALS</a></li>
+
+                <li class="category-header"><a href="#">FRAGRANCE</a></li>
+                <li><a href="#">PERFECT</a></li>
+                <li><a href="#">DAISY</a></li>
+                <li><a href="#">GIFT SETS</a></li>
+                <li><a href="#">VIEW ALL</a></li>
+
+                <li class="category-header"><a href="#">HEAVEN</a></li>
+                <li><a href="#">MARCDOWN</a></li>
+                <li><a href="#">40 YEARS OF MARC JACOBS</a></li>
+                <li><a href="#">FEATURED</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <style>
+        .toast-message {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            z-index: 1000;
+        }
+    </style>
+
+    <script>
+        // Color selection handling
+        const colorButtons = document.querySelectorAll('.color-btn');
+        const selectedColorText = document.querySelector('.selected-color');
+
+        colorButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove selected class from all color buttons
+                colorButtons.forEach(btn => btn.classList.remove('selected'));
+                // Add selected class to clicked button
+                button.classList.add('selected');
+                // Update selected color text
+                selectedColorText.textContent = button.dataset.color;
+            });
+        });
+
+        // Description toggle
+        const descriptionHeaders = document.querySelectorAll('.description-header');
+        
+        descriptionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('i');
+                
+                if (content) {
+                    content.classList.toggle('show');
+                    icon.classList.toggle('fa-plus');
+                    icon.classList.toggle('fa-minus');
+                }
+            });
+        });
+
+        // Add menu functionality
+        const menuBtn = document.querySelector('.floating-menu-btn');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const closeMenuBtn = document.querySelector('.close-menu');
+
+        menuBtn.addEventListener('click', () => {
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Add to cart functionality
+        const addToCartBtn = document.querySelector('.add-to-cart');
+        const wishlistBtn = document.querySelector('.wishlist-btn');
+        const productName = document.querySelector('.product-header h2').textContent;
+        const productPrice = document.querySelector('.product-price').textContent;
+        let selectedColor = document.querySelector('.selected-color').textContent;
+
+        addToCartBtn.addEventListener('click', () => {
+            const product = {
+                name: productName,
+                price: productPrice,
+                color: selectedColor,
+                image: document.querySelector('.main-product-image').src
+            };
+            
+            shoppingCart.addToCart(product);
+            
+            // Show confirmation message
+            const toast = document.createElement('div');
+            toast.classList.add('toast-message');
+            toast.textContent = 'Added to bag successfully!';
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 2000);
+        });
+
+        wishlistBtn.addEventListener('click', () => {
+            const product = {
+                name: productName,
+                price: productPrice,
+                color: selectedColor,
+                image: document.querySelector('.main-product-image').src
+            };
+            
+            const added = shoppingCart.addToWishlist(product);
+            
+            // Show confirmation message
+            const toast = document.createElement('div');
+            toast.classList.add('toast-message');
+            toast.textContent = added ? 'Added to wishlist!' : 'Already in wishlist!';
+            document.body.appendChild(toast);
+            
+            // Update wishlist button icon
+            const heartIcon = wishlistBtn.querySelector('i');
+            if (added) {
+                heartIcon.classList.remove('far');
+                heartIcon.classList.add('fas');
+            }
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 2000);
+        });
+
+        // Update color selection to update the selected color variable
+        colorButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                colorButtons.forEach(btn => btn.classList.remove('selected'));
+                button.classList.add('selected');
+                selectedColor = button.dataset.color;
+                selectedColorText.textContent = selectedColor;
+            });
+        });
+    </script>
+</body>
+</html> 

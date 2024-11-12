@@ -1,0 +1,1085 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.splash-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.splash-screen h1 {
+    color: black;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.loading-bar {
+    width: 200px;
+    height: 3px;
+    background-color: #eee;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.loading-progress {
+    width: 0%;
+    height: 100%;
+    background-color: black;
+    transition: width 1.9s ease-in-out;
+}
+
+/* Media query for larger mobile devices */
+@media screen and (min-width: 400px) {
+    .splash-screen h1 {
+        font-size: 3rem;
+    }
+}
+
+/* New styles for login page */
+.login-page {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+}
+
+.language-selector {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    color: white;
+    z-index: 2;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    opacity: 1;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.login-content h1 {
+    color: black;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.button-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.sign-in-btn {
+    width: 100%;
+    max-width: 400px;
+    padding: 16px;
+    background: white;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.create-account {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.skip-btn {
+    width: 100%;
+    max-width: 400px;
+    padding: 16px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+/* Update media query for larger devices */
+@media screen and (min-width: 400px) {
+    .login-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+.opacity-50 {
+    opacity: 0.5;
+}
+
+/* Add these new styles for main page */
+.main-page {
+    min-height: 100vh;
+    width: 100%;
+    background-color: white;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.header-line {
+    border: none;
+    height: 1px;
+    background-color: black;
+    margin: 0;
+    width: calc(100% + 90px); /* Extends the line to reach the icons */
+}
+
+header h1 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: black;
+    font-weight: 600;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.header-icons i {
+    font-size: 16px;
+    color: black;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-container {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.floating-menu-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.product-section {
+    display: none;
+}
+
+.product-info {
+    text-align: left;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product-info h2 {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.timer {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.product-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 2;
+}
+
+.product-title h2 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Add these new styles for the carousel */
+.carousel-section {
+    padding: 20px;
+    background: white;
+    position: relative;
+}
+
+.carousel-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.carousel-title h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black;
+}
+
+.carousel-counter {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    aspect-ratio: 1/1;
+}
+
+.product-carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+    opacity: 1;
+}
+
+.carousel-item.fade-in {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #f5f5f5;
+}
+
+.product-info {
+    text-align: left;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: black;
+    margin: 0;
+}
+
+.product-price {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: none;
+}
+
+.left-arrow {
+    left: -20px;
+}
+
+.right-arrow {
+    right: -20px;
+}
+
+.carousel-arrow i {
+    color: #000;
+    font-size: 20px;
+}
+
+.color-options {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+}
+
+.color-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    padding: 0;
+}
+
+.color-btn.active {
+    border: 2px solid #000;
+}
+
+.color-btn.brown {
+    background-color: #8B4513;
+}
+
+.color-btn.black {
+    background-color: #000;
+}
+
+.color-btn.tan {
+    background-color: #D2B48C;
+}
+
+.color-btn.white {
+    background-color: #FFF;
+}
+
+.carousel-indicators {
+    display: flex;
+    gap: 6px;
+    margin-top: 5px;
+}
+
+.indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #000;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.menu-header h2 {
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.menu-content {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.menu-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-content li {
+    margin-bottom: 20px;
+}
+
+.menu-content a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+}
+
+.category-header {
+    margin-top: 40px;
+}
+
+.category-header a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 0.7;
+    letter-spacing: 2px;
+    color: black;
+}
+
+.menu-content a:hover {
+    opacity: 0.7;
+}
+
+/* Add these styles after your existing CSS */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: white;
+}
+
+.auth-page h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.auth-container {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    padding: 20px;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.button-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.auth-container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    color: #666;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background-color: white;
+    padding: 0 4px;
+}
+
+.form-group input:focus,
+.form-group input:not(:placeholder-shown) {
+    border-color: black;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 0.8rem;
+    color: black;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 16px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.auth-links {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.auth-links a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.auth-links a:hover {
+    color: black;
+}
+
+/* Add these new styles for the auth page with video background */
+.auth-page {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+}
+
+.auth-content {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background: transparent;
+}
+
+.auth-page .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.auth-page .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.auth-container {
+    background: transparent;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: none;
+    backdrop-filter: none;
+    margin-top: 20px;
+}
+
+.auth-page h1 {
+    color: white;
+}
+
+.auth-container h2 {
+    color: white;
+}
+
+.form-group input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.form-group label {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    background: transparent;
+    color: white;
+}
+
+.auth-links a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.auth-links a:hover {
+    color: white;
+}
+
+.auth-btn {
+    background: white;
+    color: black;
+}
+
+/* Update this style in your existing CSS */
+.auth-page h1 {
+    color: black;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* Update the language selector color as well for consistency */
+.auth-page .language-selector span {
+    color: white;
+}
+
+/* Add these styles to increase button width specifically for the login page */
+.auth-page .button-container {
+    width: 100%;
+    max-width: 500px; /* Increased from 400px */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.auth-page .sign-in-btn {
+    width: 100%;
+    max-width: 500px; /* Increased from 400px */
+}
+
+.auth-page .skip-btn {
+    width: 100%;
+    max-width: 500px; /* Increased from 400px */
+}
+
+/* Add these media queries for mobile view */
+@media screen and (max-width: 480px) {
+    .auth-page .button-container {
+        max-width: 90%; /* Makes buttons take up 90% of screen width on mobile */
+        padding: 0 10px;
+    }
+
+    .auth-page .sign-in-btn {
+        max-width: 100%;
+    }
+
+    .auth-page .skip-btn {
+        max-width: 100%;
+    }
+
+    /* Also adjust padding of auth-container for mobile */
+    .auth-container {
+        padding: 20px 10px;
+    }
+}
+
+/* Add these styles for the carousel links */
+.carousel-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item a:hover {
+    opacity: 0.9;
+}
+
+/* Product page styles */
+.product-main {
+    padding: 20px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.product-images {
+    width: 100%;
+}
+
+.main-image-container {
+    width: 100%;
+    aspect-ratio: 1/1;
+    margin-bottom: 10px;
+}
+
+.main-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-thumbnails {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail.selected {
+    opacity: 1;
+}
+
+.product-info-container {
+    padding: 0 10px;
+}
+
+.product-header {
+    margin-bottom: 30px;
+}
+
+.product-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.product-colors {
+    margin-bottom: 30px;
+}
+
+.color-label {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.selected-color {
+    font-weight: 600;
+}
+
+.color-options {
+    display: flex;
+    gap: 12px;
+}
+
+.color-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.color-btn.selected {
+    border-color: #000;
+}
+
+.product-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 16px;
+    background: black;
+    color: white;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.wishlist-btn {
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    border: 1px solid #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.product-description {
+    border-top: 1px solid #eee;
+}
+
+.description-header {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.description-header h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.description-content {
+    display: none;
+    padding-bottom: 20px;
+}
+
+.description-content.show {
+    display: block;
+}
+
+.description-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.description-content li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+@media screen and (min-width: 768px) {
+    .product-main {
+        flex-direction: row;
+        gap: 60px;
+        padding: 40px;
+    }
+
+    .product-images {
+        flex: 1;
+        max-width: 600px;
+    }
+
+    .product-info-container {
+        flex: 1;
+        max-width: 500px;
+    }
+}
+
+/* Add these styles for the menu header icons */
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu-icons a {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.menu-icons a:hover {
+    opacity: 0.8;
+}
+
+/* Add these styles for the cart and wishlist count bubbles */
+.count-bubble {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.header-icons i, .menu-icons i {
+    position: relative;
+}
+
+.image-container a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-container:hover {
+    opacity: 0.9;
+}
