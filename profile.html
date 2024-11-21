@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARC JACOBS - My Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="product-page">
+        <header>
+            <div class="header-content">
+                <h1>PROFILE</h1>
+                <hr class="header-line">
+            </div>
+        </header>
+
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="profile-info">
+                    <h2>Hello User</h2>
+                    <span class="keyholder-tag">Keyholder</span>
+                </div>
+            </div>
+
+            <div class="profile-menu">
+                <div class="menu-item">
+                    <div class="menu-item-left">
+                        <div class="menu-icon">
+                            <i class="fas fa-envelope"></i>
+                            <span class="notification-badge">0</span>
+                        </div>
+                        <span>New messages</span>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-left">
+                        <div class="menu-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="menu-item-text">
+                            <span>Your orders</span>
+                            <span class="subtitle">0 orders</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-left">
+                        <div class="menu-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="menu-item-text">
+                            <span>Your wishlist</span>
+                            <span class="subtitle">0 items</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <button class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                Log Out
+            </button>
+        </div>
+
+        <nav class="bottom-nav">
+            <a href="main.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="cart.html" class="nav-item">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>Bag</span>
+            </a>
+            <a href="wishlist.html" class="nav-item">
+                <i class="fa-regular fa-heart"></i>
+                <span>Wish list</span>
+            </a>
+            <a href="profile.html" class="nav-item active">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <style>
+        .profile-container {
+            padding: 20px;
+            margin-top: 60px;
+            background: #f8f8f8;
+            min-height: calc(100vh - 125px);
+            padding-bottom: 80px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .profile-avatar {
+            font-size: 2.5rem;
+            color: #666;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .profile-info h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .keyholder-tag {
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .profile-menu {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .menu-item-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu-icon {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f8f8;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .menu-icon i {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .gold-icon {
+            color: #ffd700 !important;
+        }
+
+        .menu-item-text {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .subtitle {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff3b30;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        .logout-btn {
+            width: 100%;
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #ff3b30;
+            transition: all 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #fff5f5;
+            border-color: #ff3b30;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 8px 0;
+            border-top: 1px solid #eee;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            height: 60px;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #666;
+            font-size: 0.75rem;
+            gap: 4px;
+            width: 25%;
+            height: 100%;
+        }
+
+        .nav-item.active {
+            color: #000;
+        }
+
+        .nav-item i {
+            font-size: 1.3rem;
+            margin-bottom: 2px;
+            display: block !important;
+        }
+
+        .nav-item span {
+            display: block;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: white;
+                z-index: 1000;
+                padding: 15px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            }
+
+            .header-content h1 {
+                font-size: 1.2rem;
+                letter-spacing: 1.5px;
+            }
+
+            .profile-container {
+                padding: 15px;
+                margin-top: 65px;
+                background: #f5f5f5;
+                min-height: calc(100vh - 125px);
+                padding-bottom: 85px;
+            }
+
+            .profile-header {
+                margin: 0 0 15px 0;
+                padding: 15px;
+                border-radius: 15px;
+                background: white;
+            }
+
+            .profile-avatar {
+                font-size: 2.2rem;
+                background: #f8f8f8;
+                width: 50px;
+                height: 50px;
+                border-radius: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .profile-info h2 {
+                font-size: 1.1rem;
+                margin-bottom: 4px;
+            }
+
+            .profile-menu {
+                border-radius: 15px;
+                margin-bottom: 20px;
+            }
+
+            .menu-item {
+                padding: 16px;
+                background: white;
+                position: relative;
+            }
+
+            .menu-item:after {
+                content: '';
+                position: absolute;
+                left: 16px;
+                right: 16px;
+                bottom: 0;
+                height: 1px;
+                background: #f0f0f0;
+            }
+
+            .menu-item:last-child:after {
+                display: none;
+            }
+
+            .menu-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 12px;
+                background: #f8f8f8;
+            }
+
+            .menu-item-text {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .menu-item-text span:first-child {
+                font-weight: 500;
+                font-size: 0.95rem;
+                margin-bottom: 2px;
+            }
+
+            .subtitle {
+                font-size: 0.75rem;
+                color: #666;
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 200px;
+            }
+
+            .bottom-nav {
+                height: 70px;
+                padding: 8px 0;
+                background: white;
+                border-top: 1px solid #eee;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+            }
+
+            .nav-item {
+                height: 100%;
+                gap: 6px;
+            }
+
+            .nav-item i {
+                font-size: 1.4rem;
+                margin-bottom: 3px;
+            }
+
+            .nav-item span {
+                font-size: 0.7rem;
+                font-weight: 500;
+            }
+
+            .nav-item.active {
+                color: #000;
+                position: relative;
+            }
+
+            .nav-item.active:after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background: #000;
+            }
+
+            .logout-btn {
+                margin: 20px 0 85px 0;
+                padding: 16px;
+                border-radius: 15px;
+                font-weight: 500;
+                font-size: 0.9rem;
+                background: white;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            }
+
+            .menu-item:active {
+                background: #f8f8f8;
+            }
+
+            .menu-icon:active {
+                transform: scale(0.95);
+            }
+
+            .nav-item:active {
+                transform: scale(0.95);
+            }
+
+            .notification-badge {
+                min-width: 18px;
+                height: 18px;
+                padding: 2px 6px;
+                font-size: 0.7rem;
+                font-weight: 600;
+                border-radius: 9px;
+                top: -5px;
+                right: -5px;
+                border: 2px solid white;
+            }
+
+            .keyholder-tag {
+                padding: 4px 10px;
+                font-size: 0.7rem;
+                font-weight: 600;
+                border-radius: 12px;
+                background: linear-gradient(45deg, #ffd700, #ffed4a);
+                box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
+            }
+
+            .profile-container {
+                -webkit-overflow-scrolling: touch;
+                overflow-y: auto;
+                scrollbar-width: none;
+            }
+
+            .profile-container::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .profile-container {
+                padding: 12px;
+            }
+
+            .menu-item {
+                padding: 14px;
+            }
+
+            .menu-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .bottom-nav {
+                height: 65px;
+            }
+
+            .nav-item i {
+                font-size: 1.3rem;
+            }
+
+            .subtitle {
+                max-width: 160px;
+            }
+        }
+    </style>
+
+    <script>
+        // Logout functionality
+        const logoutBtn = document.querySelector('.logout-btn');
+        logoutBtn.addEventListener('click', () => {
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html> 
